@@ -1,0 +1,162 @@
+{
+  "train": null,
+  "test1": {
+    "warnings": {
+      "BENIGN": 14,
+      "HIGH": 2
+    },
+    "traffic_data": [
+      {
+        "second": 1,
+        "FlowPackets_s": 1.1245383982640493,
+        "FlowBytes_s": 1397.890786529181,
+        "FlowDuration": 48.69292712211609,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 13479.78955078125
+      },
+      {
+        "second": 2,
+        "FlowPackets_s": 19.170519725689225,
+        "FlowBytes_s": 14641.586736452342,
+        "FlowDuration": 95.38208150863646,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -14537.866027832031
+      },
+      {
+        "second": 3,
+        "FlowPackets_s": 15.366171228435247,
+        "FlowBytes_s": 829.7732463355034,
+        "FlowDuration": 0.1301560401916504,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -538.541021823883
+      },
+      {
+        "second": 4,
+        "FlowPackets_s": 0.4075776184635411,
+        "FlowBytes_s": 28.267822403262098,
+        "FlowDuration": 29.442310094833374,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 947.1863021850586
+      },
+      {
+        "second": 5,
+        "FlowPackets_s": 0.20878204271636158,
+        "FlowBytes_s": 16.299915518865227,
+        "FlowDuration": 130.70754289627075,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -370.8288269042969
+      },
+      {
+        "second": 6,
+        "FlowPackets_s": 11.584059125790064,
+        "FlowBytes_s": 874.5964639971497,
+        "FlowDuration": 0.1726510524749755,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 885207.3444615602
+      },
+      {
+        "second": 7,
+        "FlowPackets_s": 1787.7909044593525,
+        "FlowBytes_s": 881007.9844894314,
+        "FlowDuration": 186.72733998298645,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -882197.655755043
+      },
+      {
+        "second": 8,
+        "FlowPackets_s": 11.76983016432679,
+        "FlowBytes_s": 3450.8249340159564,
+        "FlowDuration": 40.064796924591064,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 12417.63980102539
+      },
+      {
+        "second": 9,
+        "FlowPackets_s": 11.39927776416721,
+        "FlowBytes_s": 16300.96720275911,
+        "FlowDuration": 0.6140739917755127,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 378610.6325035095
+      },
+      {
+        "second": 10,
+        "FlowPackets_s": 6985.135612576358,
+        "FlowBytes_s": 380967.4839779998,
+        "FlowDuration": 0.011441946029663,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -394559.62814331055
+      },
+      {
+        "second": 11,
+        "FlowPackets_s": 6.695166149880081,
+        "FlowBytes_s": 361.5389720935244,
+        "FlowDuration": 0.2987229824066162,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 668818.7948858738
+      },
+      {
+        "second": 12,
+        "FlowPackets_s": 10716.093451915418,
+        "FlowBytes_s": 647170.5781087978,
+        "FlowDuration": 61.05418586730957,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -667855.6772155762
+      },
+      {
+        "second": 13,
+        "FlowPackets_s": 15.850500630157228,
+        "FlowBytes_s": 1307.666301987971,
+        "FlowDuration": 0.1261789798736572,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": 607627.9533516169
+      },
+      {
+        "second": 14,
+        "FlowPackets_s": 8952.909969820927,
+        "FlowBytes_s": 591043.186759698,
+        "FlowDuration": 5.017002820968628,
+        "Label": "BENIGN",
+        "Warning": "HIGH",
+        "score": 251710820.48765564
+      },
+      {
+        "second": 15,
+        "FlowPackets_s": 3553878.1121468074,
+        "FlowBytes_s": 245212031.38926095,
+        "FlowDuration": 0.14394283294677715,
+        "Label": "BENIGN",
+        "Warning": "BENIGN",
+        "score": -252315146.262619
+      },
+      {
+        "second": 16,
+        "FlowPackets_s": 14.222681974912241,
+        "FlowBytes_s": 4602.756211276595,
+        "FlowDuration": 3.3769948482513428,
+        "Label": "BENIGN",
+        "Warning": "HIGH",
+        "score": null
+      }
+    ],
+    "max_seconds": 16,
+    "first_low": null,
+    "first_med": null,
+    "first_high": 14.0,
+    "peak_sec": 15,
+    "peak_val": 3553878.1121468074
+  },
+  "test2": null
+}
