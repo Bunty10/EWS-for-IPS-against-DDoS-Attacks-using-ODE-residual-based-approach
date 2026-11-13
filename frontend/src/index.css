@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Color tokens as RGB channel triplets. `:root` is the light palette, `.dark`
+   the dark palette. Tailwind reads these via rgb(var(--c-*) / <alpha-value>)
+   (see tailwind.config.js), so every token supports opacity utilities and
+   flips with the theme automatically.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Light — ice silver ground · deep aubergine primary · marigold accent */
+  --c-background: 233 236 241;    /* ice silver */
+  --c-surface: 255 255 255;
+  --c-surface-elevated: 244 246 249;
+  --c-primary: 91 42 78;          /* deep aubergine */
+  --c-secondary: 138 74 120;      /* lighter plum */
+  --c-accent: 238 164 34;         /* marigold */
+  --c-text: 42 19 36;             /* near-black aubergine */
+  --c-text-secondary: 104 86 100; /* muted plum-grey */
+  --c-border: 221 214 224;        /* soft lavender hairline */
+  --c-danger: 198 40 60;
+  --c-success: 22 140 110;
+
+  --grid-line: 42 19 36;          /* aubergine grid tint on silver */
+  --grid-alpha: 0.05;
+  --scroll-track: 224 227 233;
+  --scroll-thumb: 200 192 204;
+  --scroll-thumb-hover: 150 130 146;
+}
+
+.dark {
+  /* Dark — jet black ground · cerulean blue primary · neon rose accent */
+  --c-background: 10 10 12;        /* jet black */
+  --c-surface: 18 18 23;
+  --c-surface-elevated: 26 27 33;
+  --c-primary: 34 160 224;         /* cerulean blue */
+  --c-secondary: 90 200 245;       /* bright cerulean */
+  --c-accent: 255 46 120;          /* neon rose */
+  --c-text: 237 240 244;
+  --c-text-secondary: 150 158 170;
+  --c-border: 34 36 43;
+  --c-danger: 255 77 93;
+  --c-success: 46 204 150;
+
+  --grid-line: 90 200 245;         /* faint cerulean grid on black */
+  --grid-alpha: 0.05;
+  --scroll-track: 16 16 20;
+  --scroll-thumb: 38 40 48;
+  --scroll-thumb-hover: 54 57 68;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-text font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Display font + optically tight tracking for headings; balance short lines. */
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+    text-wrap: balance;
+  }
+
+  /* Tabular, monospaced figures for data-heavy UI so columns line up. */
+  .tabular, table, .ag-root {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Visible keyboard focus everywhere (accessibility). */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Subtle technical grid overlay. Theme-aware via --grid-line/--grid-alpha. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--grid-line) / var(--grid-alpha)) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--grid-line) / var(--grid-alpha)) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  /* Ambient cyan/green glow for hero/section backdrops (one soft radial pair). */
+  .bg-ambient {
+    background-image:
+      radial-gradient(60rem 40rem at 15% -10%, rgb(var(--c-primary) / 0.10), transparent 60%),
+      radial-gradient(50rem 40rem at 100% 0%, rgb(var(--c-secondary) / 0.06), transparent 55%);
+  }
+}
+
+/* Theme-aware scrollbar. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--scroll-track));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--scroll-thumb));
+  border-radius: 6px;
+  border: 2px solid rgb(var(--scroll-track));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--scroll-thumb-hover));
+}
+
+/* ag-Grid: fully driven by theme tokens, so the single .ag-theme-alpine class
+   adapts to light/dark automatically. */
+.ag-theme-alpine {
+  --ag-background-color: rgb(var(--c-surface));
+  --ag-foreground-color: rgb(var(--c-text));
+  --ag-border-color: rgb(var(--c-border));
+  --ag-odd-row-background-color: rgb(var(--c-surface-elevated) / 0.5);
+  --ag-header-background-color: rgb(var(--c-surface-elevated));
+  --ag-header-foreground-color: rgb(var(--c-text));
+  --ag-row-hover-color: rgb(var(--c-primary) / 0.08);
+  --ag-selected-row-background-color: rgb(var(--c-primary) / 0.16);
+  --ag-font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
