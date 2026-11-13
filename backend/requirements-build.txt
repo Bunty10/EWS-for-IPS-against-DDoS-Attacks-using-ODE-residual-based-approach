@@ -1,0 +1,4 @@
+# Build-time only dependencies for packaging the Windows executable.
+# Install alongside requirements.txt on the Windows build machine:
+#     pip install -r requirements.txt -r requirements-build.txt
+pyinstaller==6.11.1

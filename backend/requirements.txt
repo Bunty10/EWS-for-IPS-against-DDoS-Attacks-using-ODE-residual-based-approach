@@ -1,0 +1,27 @@
+# Core dependencies for the Residual-based ODE EWS IPS engine. Transitive
+# dependencies are resolved automatically by pip.
+#
+# The detection core is NumPy-only (system identification + PINN/Laplace
+# residuals) — there is no neural network and no PyTorch dependency.
+Flask==3.1.1
+flask-cors==6.0.1
+numpy==2.3.1
+pandas==2.3.0
+scikit-learn==1.7.0
+scapy==2.6.1
+# Optional: Excel/PDF alert reports (Admin Panel). The server runs without them;
+# those two report formats just return a 400 until installed.
+openpyxl==3.1.5
+reportlab==4.2.5
+# Loads backend/.env so SMTP_* (and other) settings can live in a file instead of
+# being exported by hand. Optional — real environment variables work without it.
+python-dotenv==1.0.1
+# Production WSGI server used by the packaged executable (launch.py). The Flask
+# dev server is used as a fallback if this isn't installed.
+waitress==3.0.2
+# Native desktop window for the packaged app (uses the Edge WebView2 runtime on
+# Windows). launch.py falls back to the browser if this isn't available.
+pywebview==5.3.2
+# CA bundle so SMTP over TLS verifies correctly inside the packaged .exe (the OS
+# trust store may be unavailable when frozen). See dlt/notifier._ssl_context.
+certifi==2024.8.30
